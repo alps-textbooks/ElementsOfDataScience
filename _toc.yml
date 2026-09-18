@@ -1,0 +1,19 @@
+format: jb-book
+parts:
+- caption: Chapters
+  numbered: true
+  chapters:
+  - file: 01_variables
+  - file: 02_times
+  - file: 03_arrays
+  - file: 04_loops
+  - file: 05_dictionaries
+  - file: 06_plotting
+  - file: 07_dataframes
+  - file: 08_distributions
+  - file: 09_relationships
+  - file: 10_regression
+  - file: 11_resampling
+  - file: 12_bootstrap
+  - file: 13_hypothesis
+  - file: 14_outro
