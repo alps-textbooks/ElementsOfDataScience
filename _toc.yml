@@ -1,7 +1,6 @@
 format: jb-book
 parts:
-- caption: Chapters
-  numbered: true
+- numbered: true
   chapters:
   - file: 01_variables
   - file: 02_times
