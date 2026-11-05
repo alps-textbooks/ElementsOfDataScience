@@ -16,6 +16,7 @@ import re
 import textwrap
 import os
 
+from IPython import get_ipython
 from IPython.core.magic import register_cell_magic
 from IPython.core.magic_arguments import argument, magic_arguments, parse_argstring
 
@@ -52,7 +53,7 @@ class FixedWidthVariables(object):
         self.colspecs = variables[["start", "end"]] - index_base
 
         # convert colspecs to a list of pair of int
-        self.colspecs = self.colspecs.astype(np.int).values.tolist()
+        self.colspecs = self.colspecs.astype(int).values.tolist()
         self.names = variables["name"]
 
     def read_fixed_width(self, filename, **options):
@@ -207,7 +208,7 @@ def fill_missing(df, varname, badvals=[98, 99]):
     badvals: list of values to be replaced
     """
     # replace badvals with NaN
-    df[varname].replace(badvals, np.nan, inplace=True)
+    df[varname] = df[varname].replace(badvals, np.nan)
 
     # get the index of rows missing varname
     null = df[varname].isnull()
@@ -369,13 +370,13 @@ def read_gss(dict_file="GSS.dct", data_file="GSS.dat.gz"):
 
     download(
         "https://github.com/AllenDowney/"
-        + "ElementsOfDataScience/raw/master/data/"
+        + "ElementsOfDataScience/raw/v1/data/"
         + dict_file
     )
 
     download(
         "https://github.com/AllenDowney/"
-        + "ElementsOfDataScience/raw/master/data/"
+        + "ElementsOfDataScience/raw/v1/data/"
         + data_file
     )
 
@@ -390,9 +391,14 @@ def traceback(mode):
 
     mode: string
     """
+    ip = get_ipython()
+    if ip is None:
+        # not running in IPython or Jupyter (e.g. a test or a script)
+        return
+
     # this context suppresses the output
     with contextlib.redirect_stdout(io.StringIO()):
-        get_ipython().run_cell(f"%xmode {mode}")
+        ip.run_cell(f"%xmode {mode}")
 
 
 traceback("Minimal")
@@ -414,7 +420,6 @@ def extract_function_name(text):
         return None
 
 
-@register_cell_magic
 def expect_error(line, cell):
     try:
         get_ipython().run_cell(cell)
@@ -424,7 +429,6 @@ def expect_error(line, cell):
 
 @magic_arguments()
 @argument("exception", help="Type of exception to catch")
-@register_cell_magic
 def expect(line, cell):
     args = parse_argstring(expect, line)
     exception = eval(args.exception)
@@ -432,3 +436,10 @@ def expect(line, cell):
         get_ipython().run_cell(cell)
     except exception as e:
         get_ipython().run_cell("%tb")
+
+
+# Register the cell magics only when running in IPython or Jupyter,
+# so this module can also be imported from a plain Python process
+if get_ipython() is not None:
+    register_cell_magic(expect_error)
+    register_cell_magic(expect)

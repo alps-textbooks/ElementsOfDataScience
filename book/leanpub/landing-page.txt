@@ -1,0 +1,156 @@
+# LeanPub book page snippets for Elements of Data Science (Task 22).
+# Copy each block into the matching field on the dashboard.
+# Book URL: https://leanpub.com/eldasci (live 2026-10-28)
+#
+# About, Teaser, Meta description, and Release notes: plain text.
+# Table of Contents: HTML only (LeanPub custom TOC field).
+#
+# Draft, 2026-10-28. Facts are from the preface (book/front/preface.md).
+# Lines starting with "# Allen:" are open questions, not copy.
+
+
+=============================================================================
+ABOUT YOUR BOOK
+Shown prominently on the book landing page. Plain text.
+=============================================================================
+
+Elements of Data Science is an introduction to data science for people with no programming experience. It presents a small, powerful subset of Python that lets you do real work with data as quickly as possible: choosing questions, finding and cleaning data, exploring and visualizing it, modeling it, and communicating what you find.
+
+You don't need to know anything about programming, statistics, or data science, and there is little math beyond arithmetic and logarithms. When the book uses a term, it defines it; when it uses a programming feature, it explains it.
+
+The book has five parts:
+
+• From Python to Pandas: variables, strings, dates and locations, lists and NumPy arrays, loops and files, dictionaries, and plotting
+• Exploratory Data Analysis: DataFrames, distributions, relationships between variables, and linear and logistic regression
+• Statistical Inference: resampling, bootstrapping, and hypothesis testing, using computation instead of mathematical analysis
+• Case Study: Political Alignment, using fifty years of General Social Survey data on polarization and changing beliefs
+• Case Study: Algorithmic Fairness, on COMPAS, an algorithm used in the criminal justice system, and why fairness is hard to define
+
+Every chapter is also a Jupyter notebook you can run on Colab, with no software to install, from https://allendowney.github.io/ElementsOfDataScience. The notebooks contain the code from the book and exercises to practice what you learn.
+
+Two editions are available in PDF and EPUB:
+
+• Free Sample: the preface and Chapters 6 and 7
+• Complete Book: all 17 chapters
+
+The complete book is pay what you want, from $9, with a suggested price of $29. Paying for it supports free, open educational materials from Green Tea Press.
+
+A printed edition, with a full-color interior, is available from Lulu: https://www.lulu.com/shop/allen-downey/elements-of-data-science/paperback/product-9dyrwn.html
+
+
+=============================================================================
+TEASER
+1–3 sentences. Plain text.
+=============================================================================
+
+An introduction to data science for people with no programming experience. Learn a small, powerful subset of Python and use it to answer real questions with real data, from survey responses to the fairness of a criminal justice algorithm.
+
+
+=============================================================================
+META DESCRIPTION
+Search-engine snippet; aim for ~160 characters. Plain text.
+=============================================================================
+
+Learn data science with Python from scratch: no programming experience needed. Real data, real questions, and notebooks you can run on Colab.
+
+
+=============================================================================
+RELEASE NOTES
+Included in the email to readers. Plain text. Update each release.
+=============================================================================
+
+Version 1.1.0 is the first LeanPub edition: the complete text of the first edition, with the code reformatted to fit the page and checked with current versions of Python and its libraries.
+
+
+=============================================================================
+TABLE OF CONTENTS (HTML)
+LeanPub's own markup (from leanpub.com/fpmortals and /rprogramming):
+<ul class="toc no-parts">, the number in <span class="section-number">,
+the next level as a nested <ul>. Parts at the top level, chapters under them.
+Keep this file as the backup: LeanPub may clear the field without warning.
+=============================================================================
+
+<ul class="toc no-parts">
+  <li>
+    Preface
+  </li>
+  <li>
+    Part I: From Python to Pandas
+    <ul>
+      <li>
+        <span class="section-number">1. </span>Variables and Values
+      </li>
+      <li>
+        <span class="section-number">2. </span>Times and Places
+      </li>
+      <li>
+        <span class="section-number">3. </span>Lists and Arrays
+      </li>
+      <li>
+        <span class="section-number">4. </span>Loops and Files
+      </li>
+      <li>
+        <span class="section-number">5. </span>Dictionaries
+      </li>
+      <li>
+        <span class="section-number">6. </span>Plotting
+      </li>
+    </ul>
+  </li>
+  <li>
+    Part II: Exploratory Data Analysis
+    <ul>
+      <li>
+        <span class="section-number">7. </span>DataFrames and Series
+      </li>
+      <li>
+        <span class="section-number">8. </span>Distributions
+      </li>
+      <li>
+        <span class="section-number">9. </span>Relationships
+      </li>
+      <li>
+        <span class="section-number">10. </span>Regression
+      </li>
+    </ul>
+  </li>
+  <li>
+    Part III: Statistical Inference
+    <ul>
+      <li>
+        <span class="section-number">11. </span>Resampling
+      </li>
+      <li>
+        <span class="section-number">12. </span>Bootstrap Sampling
+      </li>
+      <li>
+        <span class="section-number">13. </span>Hypothesis Testing
+      </li>
+    </ul>
+  </li>
+  <li>
+    Part IV: Case Study: Political Alignment
+    <ul>
+      <li>
+        <span class="section-number">14. </span>Political Alignment and Polarization
+      </li>
+      <li>
+        <span class="section-number">15. </span>Political Alignment and Outlook
+      </li>
+    </ul>
+  </li>
+  <li>
+    Part V: Case Study: Algorithmic Fairness
+    <ul>
+      <li>
+        <span class="section-number">16. </span>Predicting Crime
+      </li>
+      <li>
+        <span class="section-number">17. </span>Algorithmic Fairness
+      </li>
+    </ul>
+  </li>
+  <li>
+    Further Reading
+  </li>
+</ul>
